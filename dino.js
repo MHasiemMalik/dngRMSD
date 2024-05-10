@@ -67,9 +67,23 @@ function handleJump(delta) {
   yVelocity -= GRAVITY * delta
 }
 
-function onJump(e) {
+/*function onJump(e) {
   if (e.code !== "Space" || isJumping) return
 
   yVelocity = JUMP_SPEED
   isJumping = true
+}
+*/
+
+function onJump(e) {
+  const jumpConditions = ["Space", "KeyU"]; // Define keys for jump action
+  const isJumpKey = jumpConditions.includes(e.code); // Check if the pressed key is in the jump keys array
+  const isInputFocused = document.activeElement.tagName === "INPUT"; // Check if an input element is focused
+  
+  if (!isJumpKey && !isInputFocused) return; // Exit if the pressed key is not for jump and input is not focused
+  
+  if (!isJumping) {
+    yVelocity = JUMP_SPEED;
+    isJumping = true;
+  }
 }

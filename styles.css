@@ -134,3 +134,19 @@ button:hover {
               0 0 100px rgb(58, 234, 5),
               0 0 200px rgb(58, 234, 5);
 }
+
+#controlButton{
+  display:block;
+  position: fixed;
+  bottom:90px;
+  width: 400px; /* Adjust this value to control the distance from the bottom */
+  left: 50%;
+  transform: translateX(-50%);
+  position: fixed;
+  right: 10px;
+  z-index: 9999;
+  font-size: 20px;
+  font-family: 'Averia Sans Libre', sans-serif;
+  color: white;
+  opacity: 0.6;
+}
